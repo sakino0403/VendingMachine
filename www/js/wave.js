@@ -15,7 +15,7 @@ function init() {
     colorList = [];
     // canvas1個めの色指定
     canvasList.push(document.getElementById("waveCanvas"));
-    colorList.push(['#8ecef4']);
+    colorList.push(['#ffffff']);
   // 各キャンバスの初期化
     for(var canvasIndex in canvasList) {
         var canvas = canvasList[canvasIndex];
@@ -53,7 +53,7 @@ function draw(canvas, color) {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     //波を描画 drawWave(canvas, color[数字（波の数を0から数えて指定）], 透過, 波の幅のzoom,波の開始位置の遅れ )
-    drawWave(canvas, color[0], 0.5, 2, 0);//drawWave(canvas, color[0],0.5, 3, 0);とすると透過50%の波が出来る
+    drawWave(canvas, color[0], 1, 3, 0);//drawWave(canvas, color[0],0.5, 3, 0);とすると透過50%の波が出来る
 }
 
 /**

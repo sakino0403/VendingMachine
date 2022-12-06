@@ -10,7 +10,6 @@
     align-items: center;
     overflow: hidden;
     position: relative;
-    transform: scaleY(-1);/* 上下反転 */
 }
 
 /*========= waveを描画するエリア設定 ===============*/

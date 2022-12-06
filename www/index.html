@@ -18,6 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
+    <!-- 波 -->
+    <link rel="stylesheet" type="text/css" href="css/wave.css">
+
     <script>
         ons.ready(function() {
             console.log("Onsen UI is ready!");
@@ -31,7 +34,12 @@
 </head>
 
 <body>
-    <p>おいしいヤミー感謝感謝ァ！
+    <div id="wrapper">
+        <p>TOP画面</p>
+        <canvas id="waveCanvas"></canvas>
+        <!--/wrapper-->
+    </div>
+    <script src="js/wave.js"></script>
 </body>
 
 </html>

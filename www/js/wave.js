@@ -15,15 +15,15 @@ function init() {
     colorList = [];
     // canvas1個めの色指定
     canvasList.push(document.getElementById("waveCanvas1"));
-    colorList.push(['#000000']);
+    colorList.push(['#ffffff']);
     // canvas2個めの色指定
     canvasList.push(document.getElementById("waveCanvas2"));
-    colorList.push(['#000000']);
+    colorList.push(['#ffffff']);
   // 各キャンバスの初期化
     for(var canvasIndex in canvasList) {
         var canvas = canvasList[canvasIndex];
         canvas.width = document.documentElement.clientWidth; //Canvasのwidthをウィンドウの幅に合わせる
-        canvas.height = 150;//波の高さ
+        canvas.height = 200;//波の高さ
         canvas.contextCache = canvas.getContext("2d");
     }
     // 共通の更新処理呼び出し

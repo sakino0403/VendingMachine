@@ -22,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="css/wave.css">
 
     <script>
+        // APIキーの設定とSDK初期化
+        var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
         ons.ready(function() {
             console.log("Onsen UI is ready!");
         });
@@ -47,7 +49,7 @@
     <button onclick="location.href='./registration.html'">新規登録</button>
     <br><br>
     <img id="wave2" src="img/sky.png" width=100%>
-        <div class="wave2">
+    <div class="wave2">
 
         <canvas id="waveCanvas2"></canvas>
         <script src="js/wave.js"></script>

@@ -34,14 +34,26 @@
 </head>
 
 <body>
-    <p>TOP画面</p>
-    <img src="img/sky.png" width=100%>
     <div id="wrapper">
-        <canvas id="waveCanvas"></canvas>
-        <script src="js/wave.js"></script>
-        <!--/wrapper-->
+        <img src="img/sky.png" width=100%>
+        <div class="wave1">    
+            <canvas id="waveCanvas1"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
     </div>
-    
+
+    <p>TOP画面</p>
+    <button onclick="location.href='./login.html'">ログイン</button>
+    <button onclick="location.href='./registration.html'">新規登録</button>
+
+    <div id="wrapper">
+        
+        <div class="wave2">
+            <canvas id="waveCanvas2"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    <img src="img/sky.png" width=100%>
+    </div>
 </body>
 
 </html>

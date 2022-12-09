@@ -1,0 +1,12 @@
+/* This is a CSS file */
+body{
+    font-size: 15px;
+}
+
+input{
+position: absolute;
+width: 13.067em;
+height: 2.867em;
+left: 6.533em;
+top: 21.467em;
+}

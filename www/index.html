@@ -25,7 +25,7 @@
         // APIキーの設定とSDK初期化
         var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
 
-       
+
 
         if (ons.platform.isIPhoneX()) {
             document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
@@ -43,21 +43,31 @@
     </div>
 
 
-    <p>TOP画面</p>
-    <button onclick="location.href='./login.html'">ログイン</button>
-    <button onclick="location.href='./registration.html'">新規登録</button>
+    <!--<p>TOP画面</p>-->
+    <div class="logo">
+        <img src="img/vendy.png" width=90%>
+    </div>
+
+    <div class="topButton">
+        <div class="login">
+            <button onclick="location.href='./login.html'" class="a-button">ログイン</button>
+        </div><br>
+        <div class="registration">
+            <button onclick="location.href='./registration.html'" class="b-button">新規登録</button>
+        </div><br>
+    </div>
+
     <button onclick="location.href='./drinkList.html'">ドリンク一覧</button>
     <button onclick="location.href='./vendingList.html'">自販機一覧</button>
     <br><br>
+
+    <footer>
     <img id="wave2" src="img/sky.png" width=100%>
     <div class="wave2">
-
         <canvas id="waveCanvas2"></canvas>
         <script src="js/wave.js"></script>
-
     </div>
-
-
+    </footer>
 </body>
 
 </html>

@@ -45,101 +45,21 @@
 
             var loginStudentId = document.getElementById("loginId").value;
             var loginPassword = document.getElementById("loginPass").value;
-            alert(loginStudentId+loginPassword);
 
             var loginFlag = false;
 
-            // checkEffectiveness(loginStudentId).then(function(effectiveness) {
-            //     alert("ok");
-            //     if (loginStudentId === "") {
-            //         document.getElementById('errMessageLogNum').innerHTML = "メールアドレスが未入力です";
-            //         loginFlag = true;
-            //     } else if (effectiveness != 0) {
-            //         document.getElementById('errMessageLogNum').innerHTML = "このアカウントは現在使用できません";
-            //         loginFlag = true;
-            //     } else {
-            //         document.getElementById('errMessageLogNum').innerHTML = "";
-            //     }
-            //     if (loginPassword === "") {
-            //         document.getElementById('errMessageLogPass').innerHTML = "パスワードが未入力です";
-            //         loginFlag = true;
-            //     } else {
-            //         document.getElementById('errMessageLogPass').innerHTML = "";
-            //     }
-            //     if (loginFlag) {
-            //         return;
-            //     }
-
-
-                ncmb.User.login(loginStudentId, loginPassword)
-                    .then(function(user) {
-                        //ログイン成功時の処理(例)
-                        //console.log("ログイン成功：" + JSON.stringify(user));
-                        console.log("ログイン成功：" + ncmb.User.getCurrentUser().accountName);
-                        document.location.href = 'home.html';
-                    })
-                    .catch(function(error) {
-                        //ログイン失敗時の処理
-                        console.log("ログイン失敗：" + JSON.stringify(error));
-                        document.getElementById('errMessageLogPass').innerHTML = "学籍番号かパスワードが間違っています";
-                    });
-            // });
-        }
-
-        //アカウント有効性の確認
-        // function checkEffectiveness(loginStudentId) {
-        //     return new Promise(function(resolve, reject) {
-        //         ncmb.User.fetchAll()
-        //             .then(users => {
-        //                 users.forEach(user => {
-        //                     //ここで登録されている学籍番号かチェック
-        //                     alert(user.mailAddress);
-        //                     if (user.mailAddress === loginStudentId) {
-        //                         var effectiveness = user.effectiveness;
-        //                         resolve(effectiveness);
-        //                     }
-        //                 })
-        //             }).catch(err => {
-        //                 console.log("変数データ取得エラー" + err);
-        //             });
-        //     }).catch(err => {
-        //         console.log("checkEffectivenessエラー:" + err);
-        //         reject();
-        //     });
-        //}
-
-        // //学籍番号検索機能
-        // function wineSearch() {
-        //     var loginStudentId = document.getElementById("searchSN").value;
-        //     let lowNumber = 0;
-        //     ncmb.User.fetchAll()
-        //         .then(users => {
-        //             users.forEach(user => {
-        //                 //ここで登録されている学籍番号かチェック
-        //                 if (user.mailAddress === loginStudentId) {
-        //                     console.log("あった！");
-        //                     console.log(user.userName);
-        //                     lowNumber = lowNumber + 1;
-        //                 }
-        //             })
-        //             console.log("検索結果：" + lowNumber + "件");
-        //         }).catch(err => {
-        //             console.log("変数データ取得エラー")
-        //         });
-        // }
-
-        //ログイン中ユーザ確認
-        function confarm() {
-            // カレントユーザー情報の取得
-            // alert("確認")
-            var currentUser = ncmb.User.getCurrentUser();
-            if (currentUser != null) {
-                console.log("ログイン中のユーザー: " + currentUser.get("userName"));
-            } else {
-                console.log("未ログインまたは取得に失敗");
-            }
-            // カレントユーザーかどうかの確認
-            console.log(currentUser.isCurrentUser()); /* true or false */
+            ncmb.User.login(loginStudentId, loginPassword)
+                .then(function(user) {
+                    //ログイン成功時の処理(例)
+                    //console.log("ログイン成功：" + JSON.stringify(user));
+                    console.log("ログイン成功：" + ncmb.User.getCurrentUser().accountName);
+                    document.location.href = 'home.html';
+                })
+                .catch(function(error) {
+                    //ログイン失敗時の処理
+                    console.log("ログイン失敗：" + JSON.stringify(error));
+                    document.getElementById('errMessageLogPass').innerHTML = "学籍番号かパスワードが間違っています";
+                });
         }
     </script>
 </head>
@@ -165,11 +85,11 @@
                         <!--p class="text"-->
                         <input type="id" id="loginId" name="id" placeholder="メールアドレス">
                         <!--/p-->
-                        <span id="errMessageLogNum" class="errMessage"><span><br>
-                            <!--p class="pass"-->
-                            <input type="password" id="loginPass" name="pass" placeholder="パスワード" />
-                            <!--/p-->
-                            <span id="errMessageLogPass" class="errMessage"></span><br><br>
+                        <span id="errMessageLogNum" class="errMessage"></span><br>
+                        <!--p class="pass"-->
+                        <input type="password" id="loginPass" name="pass" placeholder="パスワード" />
+                        <!--/p-->
+                        <span id="errMessageLogPass" class="errMessage"></span><br><br>
                         <div class="bt-wine">
                             <a href="javascript:login();" class="bt-samp37">LOGIN</a>
                         </div>

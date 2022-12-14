@@ -1,12 +1,36 @@
 /* This is a CSS file */
 body{
     font-size: 15px;
+    height: 100%;
 }
 
-input{
-position: absolute;
-width: 13.067em;
-height: 2.867em;
-left: 6.533em;
-top: 21.467em;
+main{
+    overflow-y: scroll;
+    height: 70%;
+}
+
+p{
+font-family: 'Zen Maru Gothic', sans-serif;
+font-size: 2em;
+text-align: center;
+}
+
+.regiform{
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #52a7f8;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 3em;
+}
+
+footer{
+
+    bottom: 0; /*下に固定*/
+  width: 100％;
+  left: 0;
 }

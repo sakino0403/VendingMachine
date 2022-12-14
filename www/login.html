@@ -22,24 +22,6 @@
         // APIキーの設定とSDK初期化
         var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
 
-        // 保存先クラスの作成
-        var TestClass = ncmb.DataStore("TestClass");
-
-        // 保存先クラスのインスタンスを生成
-        var testClass = new TestClass();
-
-        // 値を設定と保存
-        testClass.set("message", "連携OK")
-            .save()
-            .then(function(object) {
-                // 保存に成功した場合の処理
-
-            })
-            .catch(function(err) {
-                // 保存に失敗した場合の処理
-
-            });
-
         //ログイン機能
         function login() {
 
@@ -58,7 +40,7 @@
                 .catch(function(error) {
                     //ログイン失敗時の処理
                     console.log("ログイン失敗：" + JSON.stringify(error));
-                    document.getElementById('errMessageLogPass').innerHTML = "学籍番号かパスワードが間違っています";
+                    document.getElementById('errMessageLog').innerHTML = "メールアドレスかパスワードが間違っています";
                 });
         }
     </script>
@@ -84,12 +66,12 @@
                     <div class="tab-content">
                         <!--p class="text"-->
                         <input type="id" id="loginId" name="id" placeholder="メールアドレス">
-                        <!--/p-->
-                        <span id="errMessageLogNum" class="errMessage"></span><br>
+                        <br>
                         <!--p class="pass"-->
                         <input type="password" id="loginPass" name="pass" placeholder="パスワード" />
+                        <br>
                         <!--/p-->
-                        <span id="errMessageLogPass" class="errMessage"></span><br><br>
+                        <span id="errMessageLog" class="errMessage"></span><br><br>
                         <div class="bt-wine">
                             <a href="javascript:login();" class="bt-samp37">LOGIN</a>
                         </div>

@@ -3,43 +3,45 @@
     background-color: #D7F1F8;
 }
 
-   /*その他と主な共通部分は省略*/
-a.bt-samp37{
-  display: block;
-  position: relative;
-  text-decoration: none;
-  height:35px;
-  width: 120px;
-  line-height: 37px;
-  text-align: center;
-  color: #fff;
-  background: #AFBAC5;
-  border:solid 1px #fff;
-  overflow: hidden;
-}
-a.bt-samp37:before{
-  content:"";
-  position: absolute;
-  bottom: -27px;
-  left: 0;
-  height:35px;
-  width:120px;
-  background : #832742;
-  opacity: 0.5;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s;
-}
-a.bt-samp37:hover:before{
-  bottom:0;
-}
-.bt-wine{
-  display:flex;
-  justify-content:center;
-}
+
 .errMessage{
   color: rgba(175, 10, 10, 0.993);
   font-size: 12px;
+}
+
+.login{
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #52a7f8;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 3em;
+}
+
+
+.b-button {
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #7ac0f8;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 3em;
+  text-decoration: none;
+} 
+
+input{
+    outline: none;
+    border: none;
+    background: #93d2eb;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 3em;
 }

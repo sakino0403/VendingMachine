@@ -9,6 +9,10 @@ main{
     height: 70%;
 }
 
+.item{
+    font-size: 10px;
+}
+
 p{
 font-family: 'Zen Maru Gothic', sans-serif;
 font-size: 2em;
@@ -29,8 +33,7 @@ text-align: center;
 }
 
 footer{
-
-    bottom: 0; /*下に固定*/
+  bottom: 0; /*下に固定*/
   width: 100％;
   left: 0;
 }

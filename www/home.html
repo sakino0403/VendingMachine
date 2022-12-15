@@ -12,11 +12,14 @@
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/6-1-1.css">
 
     <!-- 波 -->
     <link rel="stylesheet" type="text/css" href="css/wave.css">
@@ -31,13 +34,13 @@
         var testClass = new TestClass();
         // 値を設定と保存
         testClass.set("message", "Hello, NCMB!")
-         .save()
-         .then(function(object){
-             // 保存に成功した場合の処理
-         })
-         .catch(function(err){
-             // 保存に失敗した場合の処理
-         });
+            .save()
+            .then(function(object) {
+                // 保存に成功した場合の処理
+            })
+            .catch(function(err) {
+                // 保存に失敗した場合の処理
+            });
 
         ons.ready(function() {
             console.log("Onsen UI is ready!");
@@ -60,10 +63,19 @@
 
 
     <p>Home画面</p>
-    
+
+    <div class="slide" id="makeImg">
+        <img src="img/cider.jpg">
+        <img src="img/cm_tv.jpg">
+        <img src="img/fumaken.jpg">
+        <img src="img/lemola.jpg">
+        <img src="img/beer.png">
+    </div><br>
+
     <button onclick="location.href='./drinkList.html'">ドリンク一覧</button>
     <button onclick="location.href='./vendingList.html'">自販機一覧</button>
     <br><br>
+
     <img id="wave2" src="img/sky.png" width=100%>
     <div class="wave2">
 
@@ -71,7 +83,6 @@
         <script src="js/wave.js"></script>
 
     </div>
-
 
 </body>
 

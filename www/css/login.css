@@ -2,3 +2,46 @@
 #loginId,#loginPass{
     background-color: #D7F1F8;
 }
+
+
+.errMessage{
+  color: rgba(175, 10, 10, 0.993);
+  font-size: 12px;
+}
+
+.login{
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #52a7f8;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 3em;
+}
+
+
+.b-button {
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #7ac0f8;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 3em;
+  text-decoration: none;
+} 
+
+input{
+    outline: none;
+    border: none;
+    background: #93d2eb;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 3em;
+}

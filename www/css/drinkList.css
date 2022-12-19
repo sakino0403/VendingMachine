@@ -1,0 +1,31 @@
+body{
+    font-size: 15px;
+    height: 100%;
+}
+
+main{
+    overflow-y: scroll;
+    height: 70%;
+}
+
+footer{
+  bottom: 0; /*下に固定*/
+  width: 100％;
+  left: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.flex-item {
+  text-align: center;
+  width: 50%;
+}

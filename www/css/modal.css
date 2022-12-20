@@ -11,14 +11,12 @@
   right: 0;
 }
 
-
-
 .modal {
-  width: 65%;
-  height: 80%;
+  width: 70%;
+  height: 65%;
   border: 1px solid #000;
   position: fixed;
-  top: 50%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
@@ -67,15 +65,6 @@
 .modal-close span:nth-child(2) {
   transform: rotate(-45deg);
 }
-
-.modal-open {
-  cursor: pointer;
-  background: orange;
-  border: orange;
-  color: #fff;
-  padding: 10px 12px;
-}
-
 
 .overlay.open {
   display: block;

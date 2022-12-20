@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/drinkList.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/wave.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -27,6 +28,10 @@
             document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
         }
     </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 
 <body>
@@ -58,6 +63,25 @@
             <div class="flex-item"><img src="img/irohasu.png">南アルプスの天然水</div>
             <div class="flex-item"><img src="img/ayataka.png">お～いお茶 緑茶</div>
         </div>
+
+        <div class="overlay" id="js-overlay"></div>
+        <div class="modal" id="js-modal">
+
+            <div class="modal-close__wrap">
+                <button class="modal-close" id="js-close">
+            <span></span>
+            <span></span>
+
+            </button>
+            </div>
+            <p>コンテンツ・内容が入ります。</p>
+        </div>
+
+        <button class="modal-open" id="js-open">モーダルウィンドウオープン</button>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="modal.js"></script>
 
     </main>
 

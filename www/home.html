@@ -54,35 +54,52 @@
 </head>
 
 <body>
+    <header>
+        <img id="wave1" src="img/sky.png" width=100%>
+        <div class="wave1">
+            <canvas id="waveCanvas1" style="z-index:1"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </header>
 
-    <img id="wave1" src="img/sky.png" width=100%>
-    <div class="wave1">
-        <canvas id="waveCanvas1" style="z-index:1"></canvas>
-        <script src="js/wave.js"></script>
-    </div>
+    <main>
+        <p>お知らせ</p>
+        <div class="slide" id="makeImg">
+            <img src="img/cider.jpg">
+            <img src="img/cm_tv.jpg">
+            <img src="img/fumaken.jpg">
+            <img src="img/lemola.jpg">
+            <img src="img/beer.png">
+        </div><br>
+
+        <button onclick="location.href='./drinkList.html'">ドリンク一覧</button>
+        <button onclick="location.href='./vendingList.html'">自販機一覧</button>
+        <br><br>
+
+        <p>今月のおすすめ</p>
+        <div class="slide" id="makeImg">
+            <img src="img/cider.jpg">
+            <img src="img/cm_tv.jpg">
+            <img src="img/fumaken.jpg">
+            <img src="img/lemola.jpg">
+            <img src="img/beer.png">
+        </div><br>
+
+        <p>緊急emergency</p>
+        <img src="img/fumaken.jpg" width="100%"/>
 
 
-    <p>Home画面</p>
+    </main>
 
-    <div class="slide" id="makeImg">
-        <img src="img/cider.jpg">
-        <img src="img/cm_tv.jpg">
-        <img src="img/fumaken.jpg">
-        <img src="img/lemola.jpg">
-        <img src="img/beer.png">
-    </div><br>
+    <footer>
+        <img id="wave2" src="img/sky.png" width=100%>
+        <div class="wave2">
 
-    <button onclick="location.href='./drinkList.html'">ドリンク一覧</button>
-    <button onclick="location.href='./vendingList.html'">自販機一覧</button>
-    <br><br>
+            <canvas id="waveCanvas2"></canvas>
+            <script src="js/wave.js"></script>
 
-    <img id="wave2" src="img/sky.png" width=100%>
-    <div class="wave2">
-
-        <canvas id="waveCanvas2"></canvas>
-        <script src="js/wave.js"></script>
-
-    </div>
+        </div>
+    </footer>
 
 </body>
 

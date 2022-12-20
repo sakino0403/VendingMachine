@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/drinkList.css">
+    <link rel="stylesheet" href="css/wave.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +30,45 @@
 </head>
 
 <body>
-    <p>新規登録</p>
+    <header>
+        <img id="wave1" src="img/sky.png" width=100%>
+        <div class="wave1">
+            <canvas id="waveCanvas1" style="z-index:1"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </header>
 
-    <div style="text-align: center">
-        <p>新規登録</p>
-    </div>
-    
+    <main>
+        <label class="ECM_CheckboxInput">
+            <input class="ECM_CheckboxInput-Input" type="checkbox">絞り込み
+        </label>
+
+        <select>
+            <option value="">選択肢を選ぶ</option>
+            <option>選択肢のサンプル2</option>
+            <option>選択肢のサンプル3</option>
+            <option>選択肢のサンプル4</option>
+            <option>選択肢のサンプル5</option>
+            <option>選択肢のサンプル6</option>
+            <option>選択肢のサンプル7</option>
+        </select>
+
+        <div class="flex-container">
+            <div class="flex-item"><img src="img/irohasu.png">モンスターエナジー<br>パイプラインパンチ</div>
+            <div class="flex-item"><img src="img/irohasu.png">南アルプスの天然水</div>
+            <div class="flex-item"><img src="img/ayataka.png">お～いお茶 緑茶</div>
+        </div>
+
+    </main>
+
+    <footer>
+        <img id="wave2" src="img/sky.png" width=100%>
+        <div class="wave2">
+            <canvas id="waveCanvas2"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </footer>
+
 </body>
 
 </html>

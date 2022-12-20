@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
     <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
     <script src="components/loader.js"></script>
     <script src="lib/onsenui/js/onsenui.min.js"></script>
 
@@ -42,31 +43,34 @@
         <script src="js/wave.js"></script>
     </div>
 
+    <main>
+        <!--<p>TOP画面</p>-->
+        <div class="logo">
+            <img src="img/vendy.png" width=90%>
+        </div>
 
-    <!--<p>TOP画面</p>-->
-    <div class="logo">
-        <img src="img/vendy.png" width=90%>
-    </div>
+        <div class="topButton">
+            <div class="login">
+                <button onclick="location.href='./login.html'" class="a-button">ログイン</button>
+            </div><br>
+            <div class="registration">
+                <button onclick="location.href='./registration.html'" class="b-button">新規登録</button>
+            </div><br>
+        </div>
 
-    <div class="topButton">
-        <div class="login">
-            <button onclick="location.href='./login.html'" class="a-button">ログイン</button>
-        </div><br>
-        <div class="registration">
-            <button onclick="location.href='./registration.html'" class="b-button">新規登録</button>
-        </div><br>
-    </div>
+        <button onclick="location.href='./drinkList.html'">ドリンク一覧</button>
+        <button onclick="location.href='./vendingList.html'">自販機一覧</button>
+        <button onclick="location.href='./home.html'">Home</button>
+        <br><br>
 
-    <button onclick="location.href='./drinkList.html'">ドリンク一覧</button>
-    <button onclick="location.href='./vendingList.html'">自販機一覧</button>
-    <br><br>
+    </main>
 
     <footer>
-    <img id="wave2" src="img/sky.png" width=100%>
-    <div class="wave2">
-        <canvas id="waveCanvas2"></canvas>
-        <script src="js/wave.js"></script>
-    </div>
+        <img id="wave2" src="img/sky.png" width=100%>
+        <div class="wave2">
+            <canvas id="waveCanvas2"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
     </footer>
 </body>
 

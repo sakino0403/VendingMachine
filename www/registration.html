@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="css/registration.css">
     <link rel="stylesheet" href="css/wave.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,18 +81,15 @@
                 console.log("検索番号：" + createMail);
                 let lowNumber = 0;
                 var searchFlag = true;
-                ncmb.User.fetchAll()
-                    .then(users => {
-                        console.log("チョキ")
-                        users.forEach(user => {
-                            console.log("学生名：" + user.userName);
-                            //ここで登録されている学籍番号かチェック
-                            if (user.userName == createMail) {
-                                console.log(user.userName);
-                                lowNumber = lowNumber + 1;
-                                searchFlag = false;
-                            }
-                        })
+                ncmb.User.equalTo("userName", createMail)
+                    .fetchAll()
+                    .then(function(results) {
+                        console.log(results);
+                        if (results.length != null) {
+                            console.log("チョキ");
+                            lowNumber = lowNumber + 1;
+                            searchFlag = false;
+                        }
                         console.log("検索結果：" + lowNumber + "件");
                         setTimeout(function() {
                             resolve(searchFlag);
@@ -151,12 +149,15 @@
             <div class="item">
                 <p>氏名</p>
                 <input type="text" id="newName" name="name" size="30" />
+                <br>
                 <span id="errMessageName" class="errMessage"></span>
                 <p>メールアドレス</p>
                 <input type="email" id="mail" name="mail" size="30" />
+                <br>
                 <span id="errMessageNum" class="errMessage"></span>
                 <p>パスワード</p>
                 <input type="password" id="loginPass" name="password" size="30" />
+                <br>
                 <span id="errMessagePass" class="errMessage"></span>
                 <br><br><br>
             </div>

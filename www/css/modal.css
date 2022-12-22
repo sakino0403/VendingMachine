@@ -73,3 +73,15 @@
 .modal.open {
   display: block;
 }
+
+.modal1{
+    z-index: 1;
+}
+
+.modal2{
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  width: 50%;
+  z-index: 2;
+}

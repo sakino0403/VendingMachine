@@ -59,25 +59,38 @@
         </select>
 
         <div class="flex-container">
-            <div class="flex-item"><img src="img/irohasu.png">モンスターエナジー<br>パイプラインパンチ</div>
-            <div class="flex-item"><img src="img/irohasu.png">南アルプスの天然水</div>
-            <div class="flex-item"><img src="img/ayataka.png">お～いお茶 緑茶</div>
+            <div class="flex-item"><img src="img/irohasu.png">モンスターエナジー<br>パイプラインパンチ<br>\100</div>
+            <div class="flex-item"><img src="img/irohasu.png">南アルプスの天然水<br>\100</div>
+            <div class="flex-item"><img src="img/ayataka.png">お～いお茶 緑茶<br>\100</div>
 
             <div class="overlay" id="js-overlay"></div>
             <div class="modal" id="js-modal">
-
                 <div class="modal-close__wrap">
                     <button class="modal-close" id="js-close">
-            <span></span>
-            <span></span>
-
-            </button>
+                    <span></span>
+                    <span></span>
+                    </button>
                 </div>
-                <p>なんのために生まれて<br>なにをして生きるのか<br>こたえられないなんて そんなのはいやだ！<br>今を生きることで 熱い こころ 燃える<br>だから 君は いくんだ ほほえんで<br><br>僕は嫌だ!!<br><br>不協和音を 僕は恐れたりしない<br>嫌われたって 僕には僕の正義があるんだ<br>殴ればいいさ 一度妥協したら死んだも同然<br>支配したいなら 僕を倒してから行けよ!
-                </p>
+                <p>なんのため</p>
             </div>
 
-            <div class="flex-item"><img src="img/irohasu.png" class="modal-open" id="js-open" />これだけモーダル出るで<br>PUSH</div>
+            <div class="flex-item"><img style="height:200px; background-image:url('img/cold.png');" src="img/A.png" class="modal-open" id="js-open" width="100%"/>これだけモーダル出るで<br>\100</div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="js/modal.js"></script>
+        </div>
+
+        <div class="overlay" id="js-overlay"></div>
+            <div class="modal" id="js-modal">
+                <div class="modal-close__wrap">
+                    <button class="modal-close" id="js-close">
+                    <span></span>
+                    <span></span>
+                    </button>
+                </div>
+                <p>なんのため</p>
+            </div>
+
+            <div class="flex-item"><img style="height:200px; background-image:url('img/cold.png');" src="img/A.png" class="modal-open" id="js-open" width="100%"/>これはモーダル出ん<br>\100</div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script src="js/modal.js"></script>
         </div>
@@ -85,6 +98,13 @@
 
     <footer>
         <img id="wave2" src="img/sky.png" width=100%>
+        <div class="flex-c">
+        <div class="flex"><p>Home</p></div>
+        <div class="flex"><p>Drink</p></div>
+        <div class="flex"><p>Vending</p></div>
+        <div class="flex"><p>Ranking</p></div>
+        <div class="flex"><p>Favorite</p></div>
+        </div>
         <div class="wave2">
             <canvas id="waveCanvas2"></canvas>
             <script src="js/wave.js"></script>

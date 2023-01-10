@@ -9,6 +9,22 @@ text-align: center;
 text-align : center;
 }
 
+body{
+    font-size: 15px;
+    height: 100%;
+}
+
+main{
+    overflow-y: scroll;
+    height: 70%;
+}
+
+footer{
+  bottom: 0; /*下に固定*/
+  width: 100％;
+  left: 0;
+}
+
 .a-button {
   appearance: none;
   border: 0;
@@ -39,11 +55,4 @@ text-align : center;
 display:flex;
 flex-flow: column;
 text-align: center;
-}
-
-footer{
-    
-    bottom: 0; /*下に固定*/
-  width: 100％;
-  left: 0;
 }

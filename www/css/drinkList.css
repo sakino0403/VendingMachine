@@ -1,22 +1,6 @@
-body{
-    font-size: 15px;
-    height: 100%;
-}
-
 main{
     overflow-y: scroll;
-    height: 70%;
-}
-
-footer{
-  bottom: 0; /*下に固定*/
-  width: 100％;
-  left: 0;
-  font-size: 8px;
-}
-
-* {
-  box-sizing: border-box;
+    height: 80%;
 }
 
 .flex-container {
@@ -29,16 +13,4 @@ footer{
 .flex-item {
   text-align: center;
   width: 50%;
-}
-
-.flex-c {
-  display: flex;
-  flex-wrap: wrap;
-  overflow-x: hidden;
-  width: 100%;
-}
-
-.flex{
-    width: 20%;
-    text-align: center;
 }

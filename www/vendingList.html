@@ -1,18 +1,260 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/wave.css">
+    <link rel="stylesheet" href="css/vending.css">
     <script src="components/loader.js"></script>
     <script>
-        //
-        // TODO: Write JavaScript code here
-        //
+        // APIキーの設定とSDK初期化
+        var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
+
+        // function multi_filter(h, t, s, r = "") {
+        //     console.log("チョキ");
+        //     let hidden = h;
+        //     let targets = document.querySelectorAll(t);
+        //     let selects = document.querySelectorAll(s);
+        //     let result = document.querySelector(r);
+        //     let result_msg = "";
+
+        //     if (selects) {
+        //         //****** for all select ******
+        //         for (let i of selects) {
+        //             i.addEventListener("change", () => {
+        //                 let hidden_num = 0;
+        //                 //*** for each target ***
+        //                 for (let ii of targets) {
+        //                     //*** delete hidden class ***
+        //                     ii.classList.remove(hidden);
+        //                     //*** check target every select ***
+        //                     for (let iii of selects) {
+        //                         //*** get select name value / option value / target data attribute ***
+        //                         let value = iii.value;
+        //                         let name = iii.getAttribute("name");
+        //                         let item_data = ii.getAttribute("data-" + name);
+        //                         //*** set hidden class ***
+        //                         // exist value & except all & item_data not match & no hidden class
+        //                         if (value && value !== "all" && value !== item_data && !ii.classList.contains(hidden)) {
+        //                             ii.classList.add(hidden);
+        //                             hidden_num++;
+        //                         }
+        //                     }
+        //                 }
+        //             });
+        //         }
+        //     }
+        // }
+
+        function waa(num) {
+            console.log("aaa");
+            var TestClass = ncmb.DataStore('vending');
+            var item = TestClass
+            TestClass.equalTo("vendingId", num)
+                .fetchAll()
+                .then(item => {
+                    console.log(item.drinkFlg);
+                })
+                .catch(e => {
+                    console.log('データなし');
+                });
+        }
     </script>
 </head>
+
+
 <body>
-    <!-- TODO: Please edit here -->
+    <header>
+        <img id="wave1" src="img/sky.png" width=100%>
+        <div class="wave1">
+            <canvas id="waveCanvas1" style="z-index:1"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </header>
+    <!------ filter ------>
+    <div>
+        <!------ 絞り込み部分 ------>
+        <!-- <select class="js-filter" name="area">
+            <option value="all">全て</option>
+            <option value="本館">本館</option>
+            <option value="2号館">2号館</option>
+            <option value="3号館">3号館</option>
+        </select>
+        <select class="js-filter" name="floor">
+            <option value="all">全て</option>
+            <option value="1F">1F</option>
+            <option value="2F">2F</option>
+            <option value="3F">3F</option>
+            <option value="4F">4F</option>
+            <option value="5F">5F</option>
+            <option value="6F">6F</option>
+            <option value="7F">7F</option>
+            <option value="8F">8F</option>
+        </select> -->
+
+        <!------ 絞り込み対象 ------>
+        <ul class="accordion-area">
+            <h2>本館1F</h2>
+            <li>
+                <section>
+                    <h3 class="title">101</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">102</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館2F</h2>
+            <h3>現在自動販売機は設置されていません</h3>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館3F</h2>
+            <h3>現在自動販売機は設置されていません</h3>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館4F</h2>
+            <li>
+                <section>
+                    <h3 class="title">401</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">402</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">403</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <li>
+                <section class="js-filter-item">
+                    <h3 class="title">403</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館5F</h2>
+            <h3>現在自動販売機は設置されていません</h3>
+        </ul>
+         <ul class="accordion-area">
+            <h2>本館6F</h2>
+            <li>
+                <section>
+                    <h3 class="title">601</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">602</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+         <ul class="accordion-area">
+            <h2>本館8F</h2>
+            <li>
+                <section>
+                    <h3 class="title">801</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>2号館</h2>
+            <h3>現在自動販売機は設置されていません</h3>
+        </ul>
+        <ul class="accordion-area">
+            <h2>3号館1F</h2>
+            <li>
+                <section>
+                    <h3 class="title">311</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">312</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>3号館2F</h2>
+            <li>
+                <section>
+                    <h3 class="title">321</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">322</h3>
+                    <div class="box">
+                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <!-- <script>
+            multi_filter('d-none', '.js-filter-item', '.js-filter', '.js-filter-msg');
+        </script> -->
+        <script>
+            waa("101");
+        </script>
+        <br>
+
+    </div>
+    <footer>
+        <img id="wave2" src="img/sky.png" width=100%>
+        <div class="wave2">
+            <canvas id="waveCanvas2"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/vendingDown.js"></script>
 </body>
+
 </html>

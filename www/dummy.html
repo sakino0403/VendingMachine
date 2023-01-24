@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+    <script src="components/loader.js"></script>
+    <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dummy.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+    <!-- 波 -->
+    <link rel="stylesheet" type="text/css" href="css/wave.css">
+
+    <script>
+        // APIキーの設定とSDK初期化
+        var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
+
+        var reader = new FileReader();
+
+        var imgs = []; // 商品の画像入れるとこ
+
+        // 取得した情報で画面を上書き
+        function drink() {
+            var Drink = ncmb.DataStore("drink");
+            Drink.fetchAll()
+                .then(function(results) {
+                    for (var i = 0; i <= results.length - 1; i++) {
+                        var object = results[i];
+                        var image_id = "imgs" + (i + 1);
+                        //ボイスをリストに格納
+                        var drinklist_element = document.getElementById('drinklist');
+                        drinklist_element.insertAdjacentHTML("beforebegin",'<br><img src="https://mbaas.api.nifcloud.com/2013-09-01/applications/rRVxm2FhZzIeAcJm/publicFiles/' + object.img + ' " width="200" height="250"/>');
+
+                    }
+                }).catch(function(err) {
+                    console.error("error");
+                });
+        }
+    </script>
+
+    <script src="js/dummy.js"></script>
+    <script src="js/lists.js"></script>
+</head>
+
+<body id="prodact_lists" onload="drink()">
+    <div class="cover"></div>
+    <div id="cover2"></div>
+    
+    <header>
+        <img id="wave1" src="img/sky.png" width=100%>
+        <div class="wave1">
+            <canvas id="waveCanvas1" style="z-index:1"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </header>
+
+    <main>
+        <button type="button" class="b-button" onclick="history.back()">戻る</button><br><br>
+        <input class="sort" type="checkbox">絞り込み
+
+    <!-- 絞り込み -->
+        <select>
+            <option value="">選択肢を選ぶ</option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+        </select><br><br>
+
+    <!-- モーダルの中身 -->
+        <div class="modal"><span class="close">✖</span> <br>綾鷹１</div>
+        <div id="modal2"><span id="close">✖</span>綾鷹２</div>
+        <div class="modal" id="modal3"><span class="close">✖</span> <br>綾鷹３</div>
+        
+    <!-- ドリンク一覧 -->
+        <div class="flex-container">
+            <div class="flex-item"><img src="img/ayataka.png" class="edit" />お～いお茶 緑茶<br>100円<br><br></div>
+
+            <div class="flex-item"><img src="img/ayataka.png" id="edit2" />お～いお茶 緑茶<br>110円<br><br></div>
+
+            <div class="flex-item"><img src="" class="edit" width="200" height="200" />お～いお茶 緑茶<br>120円<br><br></div>
+            <script>downloadImage();</script>
+
+            <div class="flex-item"><img src="" class="edit" width="200" height="200" />お～いお茶 緑茶<br>130円<br><br></div>
+            <script>downloadImage();</script>
+            <script src="js/dummy.js"></script>
+
+            <div class="flex-item"><img src="" class="edit" width="200" height="200" />お～いお茶 緑茶<br>140円<br><br></div>
+            <script>downloadImage();</script>
+            <script src="js/dummy.js"></script>
+
+            <div class="flex-item"><img src="" class="edit" width="200" height="200" />お～いお茶 緑茶<br>150円<br><br></div>
+            <script>downloadImage();</script>
+            <script src="js/dummy.js"></script>
+
+            <div class="flex-item"><img src="" class="edit" width="200" height="200" />お～いお茶 緑茶<br>160円<br><br></div>
+            <script>downloadImage();</script>
+            <script src="js/dummy.js"></script>
+
+
+            <div class="flex-item" id="drinklist"></div>
+        </div>
+    </main>
+
+    <footer>
+        <img id="wave2" src="img/sky.png" width=100%>
+        <div class="wave2">
+            <canvas id="waveCanvas2"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+
+</html>

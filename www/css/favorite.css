@@ -1,0 +1,87 @@
+.cover {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background: rgba(0,0,0,0.25);
+  z-index: 1;
+  display: none;
+}
+
+#cover2 {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background: rgba(0,0,0,0.25);
+  z-index: 1;
+  display: none;
+}
+.modal {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+   top: 20%;
+  height: 65%;
+  background: rgba(255,255,255, 1);
+  z-index: 2;
+  display: none;
+  text-align: center;
+}
+
+#modal2 {
+  position: absolute;
+  width: 33%;
+  left: 33%;
+   top: 20%;
+  height: auto;
+  background: rgba(255,255,255, 1);
+  z-index: 2;
+  display: none;
+}
+
+.flex-container {
+    flex-flow: column;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.flex-item {
+  text-align: center;
+}
+
+.flex-item.title {
+    text-align: center;
+}
+
+
+input[type="checkbox"] {
+  display: none;
+}
+label {
+  position: relative;
+  cursor: pointer;
+}
+label svg {
+  width: 80px;
+}
+input[type="checkbox"] + label svg {
+  fill: #FAE2E2;
+}
+input[type="checkbox"]:checked + label svg {
+  fill: #ff1919;
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 5px solid #FA9797;
+  border-radius: 50%;
+  animation: circle .8s ease-out;
+  opacity: 0;
+  top: -10px;
+  left: -4px;
+  z-index: -100;
+}

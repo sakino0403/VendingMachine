@@ -23,58 +23,65 @@
         var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
 
         var reader = new FileReader();
-        reader.onload = function(e) {
-            var dataUrl = reader.result;
-            document.getElementById("image").src = dataUrl;
-        }
+        // reader.onload = function(e) {
+        //     var dataUrl = reader.result;
+        //     document.getElementById("image").src = dataUrl;
+        // }
 
-        // 処理を一時停止する
-        const wait = (sec) => { // タイマ
-            return new Promise((resolve, reject) => {
-                setTimeout(resolve, sec * 1000);
-            });
-        };
+        var imgs = []; // 商品の画像入れるとこ
 
-        // 画像を配置する
-        function setImage(i, flg) {
-            reader.onload = function(e) {
-                var dataUrl = reader.result;
-                if (flg == 0) {
-                    console.log("flg_g");
-                    image_id = "g_image" + (i + 1);
-                }
-                console.log(image_id);
-                document.getElementById(image_id).src = dataUrl;
-            }
-        }
+        // // 処理を一時停止する
+        // const wait = (sec) => { // タイマ
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(resolve, sec * 1000);
+        //     });
+        // };
 
-        // 画像を読み込む
-        function downloadImage(fileName) {
-            // ダウンロード（データ形式をblobを指定）
-            ncmb.File.download(fileName, "blob")
-                .then(function(blob) {
-                    // ファイルリーダーにデータを渡す
-                    reader.readAsDataURL(blob);
-                })
-                .catch(function(err) {
-                    console.error(err);
-                })
-        }
+        // // 画像を配置する
+        // function setImage(i) {
+        //     console.log("dainyuu");
+        //     reader.onload = function(e) {
+        //         var dataUrl = reader.result;
+        //         console.log("cka:" + dataUrl);
+        //         image_id = "imgs" + (i + 1);
 
-        // サムネイル画像を上から順に表示する
-        async function setImg(flg) {
-            // 一覧画面(リロード)
-            for (var j = g_imgs.length - g_cntSwitch - (cnt * 4); j > g_imgs.length - 4 * (cnt + 1); j--) {
-                if (j <= -1) {
-                    break;
-                }
-                console.log("ダウンロードする画像の位置 " + j);
-                downloadImage(g_imgs[j]);
-                await wait(0.1);
-                setImage(j, flg);
-                await wait(1.5);
-            }
-        }
+        //         console.log(image_id);
+        //         document.getElementById(image_id).src = dataUrl;
+        //     }
+        // }
+
+        // // 画像を読み込む
+        // function downloadImage(fileName) {
+        //     // ダウンロード（データ形式をblobを指定）
+        //     ncmb.File.download("D00000001.png", "blob")
+        //         .then(function(blob) {
+        //             // ファイルリーダーにデータを渡す
+        //             reader.readAsDataURL(blob);
+        //             // console.log(reader);
+        //             console.log("downloadsuccess");
+        //         })
+        //         .catch(function(err) {
+        //             console.error(err);
+        //         })
+        // }
+
+        // // サムネイル画像を上から順に表示する
+        // async function setImg() {
+        //     // 一覧画面(リロード)
+        //     console.log("ck:" + imgs.length);
+        //     for (var j = 0; j < imgs.length; j++) {
+        //         console.log("ck:" + imgs[j]);
+        //         // if (j <= -1) {
+        //         //     break;
+        //         // }
+        //         console.log("ダウンロードする画像の位置 " + j);
+        //         downloadImage(imgs[j]);
+        //         await wait(0.1);
+        //         console.log("追加するよ");
+        //         setImage(i);
+        //         await wait(1.5);
+        // }
+        // }
 
         // 取得した情報で画面を上書き
         function drink() {
@@ -83,22 +90,16 @@
                 .then(function(results) {
                     for (var i = 0; i <= results.length - 1; i++) {
                         var object = results[i];
-                        var img = object.img;
-                        var a = ;
+                        var image_id = "imgs" + (i + 1);
                         //ボイスをリストに格納
                         var drinklist_element = document.getElementById('drinklist');
-                        drinklist_element.insertAdjacentHTML("beforebegin", object.drinkName + '<br><img src="" id="image" width="110" height="150"/>' +
-                            '<script>downloadImage()</script>');
+                        drinklist_element.insertAdjacentHTML("beforebegin", object.drinkName + '<br><img src="https://mbaas.api.nifcloud.com/2013-09-01/applications/rRVxm2FhZzIeAcJm/publicFiles/' + object.img + ' " width="200" height="250"/>');
+
                     }
-                    document.getElementById('drinkName').innerHTML = object.drinkName;
-                    document.getElementById('imgame').innerHTML = document;
                 }).catch(function(err) {
-                    console.log(err);
+                    console.error("error");
                 });
         }
-
-        function downloadImage(img) { // ファイル名からファイルを取得 console.log(img);
-            var fileName = img; // TODO // ダウンロード（データ形式をblobを指定） ncmb.File.download(fileName) .then(function() { // ファイルリーダーにデータを渡す console.log(reader.readAsDataURL()) return reader.readAsDataURL(); }) .catch(function(err) { return "取得できてない"; }) }
     </script>
 
 </head>

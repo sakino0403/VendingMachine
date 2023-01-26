@@ -2,20 +2,30 @@
 .d-none {
   display: none;
 }
+main{
+    overflow-y: scroll;
+    height: 80%;
+    max-height: 632px;
+    padding-right: 40px;
+    }
+
 /*アコーディオン全体*/
 .accordion-area{
     list-style: none;
-    width: 96%;
-    max-width: 900px;
+    width: 80%;
+    max-width: 500px;
     margin:0 auto;
 }
 
 .accordion-area li{
-    margin: 10px 0;
+    margin: 10px auto;
 }
 
 .accordion-area section {
   border: 1px solid #ccc;
+}
+section{
+    width: 270px;
 }
 
 /*アコーディオンタイトル*/
@@ -26,6 +36,8 @@
     font-weight: normal;
     padding: 3% 3% 3% 50px;
     transition: all .5s ease;
+    height: 50px;
+    display:flex;
 }
 
 /*アイコンの＋と×*/
@@ -63,7 +75,7 @@
 .box {
     display: none;/*はじめは非表示*/
     background: #f3f3f3;
-  margin:0 3% 3% 3%;
+    margin:0 3% 3% 3%;
     padding: 3%;
 }
 
@@ -75,3 +87,12 @@ h2{
     margin: 30px 0;
     font-size:1rem;
 }
+
+.flg{
+    display:flex;
+}
+
+.ico{
+    margin-top: 15px;
+}
+

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/wave.css">
     <link rel="stylesheet" href="css/vending.css">
+
     <script src="components/loader.js"></script>
     <script>
         // APIキーの設定とSDK初期化
@@ -50,13 +51,67 @@
         // }
 
         function waa(num) {
-            console.log("aaa");
+            console.log("右膝十字靱帯断裂");
             var TestClass = ncmb.DataStore('vending');
-            var item = TestClass
-            TestClass.equalTo("vendingId", num)
+            var item = TestClass.equalTo("vendingId", num)
                 .fetchAll()
-                .then(item => {
-                    console.log(item.drinkFlg);
+                .then(item => { //itemはlist型
+                    var object = item[0];
+                    var payId = object.payId;
+                    console.log(payId);
+                    console.log(object);
+                    console.log("届いたぞ！ノロマ！");
+                    // var TestClass = ncmb.DataStore('pay');
+                    // var item = TestClass.equalTo("payId", payId)
+                    //     .fetchAll()
+                    //     .then(item => { //itemはlist型
+                    //         console.log(item.cash);
+                    //         for (var i = 0; i <= item.length - 1; i++) {
+                    //             var a = item[0];
+                    //             console.log("世界一になるのは俺だ！");
+                    //             if(a.cash){
+                    //                 document.getElementById('cash_area').innerHTML = "有";
+                    //             }else{
+                    //                 document.getElementById('cash_area').innerHTML = "無";
+                    //             }
+                    //             if(a.CokeONPay){
+                    //                 document.getElementById('CokeONPay_area').innerHTML = "有";
+                    //             }else{
+                    //                 document.getElementById('CokeONPay_area').innerHTML = "無";
+                    //             }
+                    //             if(a.dPay){
+                    //                 document.getElementById('dPay_area').innerHTML = "有";
+                    //             }else{
+                    //                 document.getElementById('dPay_area').innerHTML = "無";
+                    //             }
+                    //         }
+                    //         // console.log(object.CokeONPay);
+                    //         // console.log(object.dPay);
+                    //         document.getElementById('edit_area').innerHTML = a.cash;
+                    //     })
+                    //     .catch(e => {
+                    //         console.log('俺はサッカーをあきらめる理由を探しにブルーロックに来た');
+                    //     });
+                    var food = "";
+                    var drink = "";
+                    const image = document.createElement('img');
+                    image.src = 'img/have.png'; // 画像パス
+                    if (object.foodFlg) {
+                        food = '<img src="img/have.png">';
+                    } else {
+                        food = '';
+                        console.log(food);
+                    }
+                    if (object.drinkFlg) {
+                        drink = '<img src="img/have.png">';
+                    } else {
+                        drink = '';
+                    }
+
+                    document.getElementById('cashArea' + num).innerHTML = object.payData;
+                    document.getElementById('foodFlgArea' + num).innerHTML = food;
+                    document.getElementById('drinkFlgArea' + num).innerHTML = drink;
+
                 })
                 .catch(e => {
                     console.log('データなし');
@@ -75,7 +130,7 @@
         </div>
     </header>
     <!------ filter ------>
-    <div>
+    <main>
         <!------ 絞り込み部分 ------>
         <!-- <select class="js-filter" name="area">
             <option value="all">全て</option>
@@ -97,20 +152,45 @@
 
         <!------ 絞り込み対象 ------>
         <ul class="accordion-area">
+            <div class="info">
+                <h2>決済可能：●　決済不可能：〇</h2>
+            </div>
+
             <h2>本館1F</h2>
             <li>
                 <section>
-                    <h3 class="title">101</h3>
+                    <h3 class="title">101<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea101"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea101"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <div class="flg">
+
+                        </div>
+                        <script>
+                            waa("101");
+                        </script>
+                        <p>
+                            <div id="cashArea101"></div>
+                        </p>
                     </div>
                 </section>
             </li>
             <li>
                 <section>
-                    <h3 class="title">102</h3>
+                    <h3 class="title">102<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea102"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea102"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("102");
+                        </script>
+                        <p>
+                            <div id="cashArea102"></div>
+                        </p>
                     </div>
                 </section>
             </li>
@@ -127,35 +207,52 @@
             <h2>本館4F</h2>
             <li>
                 <section>
-                    <h3 class="title">401</h3>
+                    <h3 class="title">401<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea1401"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea401"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("401");
+                        </script>
+                        <p>
+                            <div id="cashArea401"></div>
+                        </p>
                     </div>
                 </section>
             </li>
             <li>
                 <section>
-                    <h3 class="title">402</h3>
+                    <h3 class="title">402<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea402"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea402"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("402");
+                        </script>
+                        <p>
+                            <div id="cashArea402"></div>
+                        </p>
                     </div>
                 </section>
             </li>
             <li>
                 <section>
-                    <h3 class="title">403</h3>
+                    <h3 class="title">403<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea403"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea403"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
-                    </div>
-                </section>
-            </li>
-        </ul>
-        <ul class="accordion-area">
-            <li>
-                <section class="js-filter-item">
-                    <h3 class="title">403</h3>
-                    <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("403");
+                        </script>
+                        <p>
+                            <div id="cashArea403"></div>
+                        </p>
                     </div>
                 </section>
             </li>
@@ -164,32 +261,59 @@
             <h2>本館5F</h2>
             <h3>現在自動販売機は設置されていません</h3>
         </ul>
-         <ul class="accordion-area">
+        <ul class="accordion-area">
             <h2>本館6F</h2>
             <li>
                 <section>
-                    <h3 class="title">601</h3>
+                    <h3 class="title">601<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea601"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea601"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("601");
+                        </script>
+                        <p>
+                            <div id="cashArea601"></div>
+                        </p>
                     </div>
                 </section>
             </li>
             <li>
                 <section>
-                    <h3 class="title">602</h3>
+                    <h3 class="title">602<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea602"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea602"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("602");
+                        </script>
+                        <p>
+                            <div id="cashArea602"></div>
+                        </p>
                     </div>
                 </section>
             </li>
         </ul>
-         <ul class="accordion-area">
+        <ul class="accordion-area">
             <h2>本館8F</h2>
             <li>
                 <section>
-                    <h3 class="title">801</h3>
+                    <h3 class="title">801<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea801"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea801"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("801");
+                        </script>
+                        <p>
+                            <div id="cashArea801"></div>
+                        </p>
                     </div>
                 </section>
             </li>
@@ -202,17 +326,35 @@
             <h2>3号館1F</h2>
             <li>
                 <section>
-                    <h3 class="title">311</h3>
+                    <h3 class="title">311<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea311"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea311"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("311");
+                        </script>
+                        <p>
+                            <div id="cashArea311"></div>
+                        </p>
                     </div>
                 </section>
             </li>
             <li>
                 <section>
-                    <h3 class="title">312</h3>
+                    <h3 class="title">312<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea312"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea312"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("312");
+                        </script>
+                        <p>
+                            <div id="cashArea312"></div>
+                        </p>
                     </div>
                 </section>
             </li>
@@ -221,17 +363,35 @@
             <h2>3号館2F</h2>
             <li>
                 <section>
-                    <h3 class="title">321</h3>
+                    <h3 class="title">321<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea321"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea321"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("321");
+                        </script>
+                        <p>
+                            <div id="cashArea321"></div>
+                        </p>
                     </div>
                 </section>
             </li>
             <li>
                 <section>
-                    <h3 class="title">322</h3>
+                    <h3 class="title">322<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea322"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea322"></div>
+                    </h3>
                     <div class="box">
-                        <p>お問い合わせフォームより日時や内容などをご記入いただきご相談ください。</p>
+                        <script>
+                            waa("322");
+                        </script>
+                        <p>
+                            <div id="cashArea322"></div>
+                        </p>
                     </div>
                 </section>
             </li>
@@ -239,12 +399,8 @@
         <!-- <script>
             multi_filter('d-none', '.js-filter-item', '.js-filter', '.js-filter-msg');
         </script> -->
-        <script>
-            waa("101");
-        </script>
         <br>
-
-    </div>
+    </main>
     <footer>
         <img id="wave2" src="img/sky.png" width=100%>
         <div class="wave2">

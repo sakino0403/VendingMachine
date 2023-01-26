@@ -9,3 +9,5 @@ $('.title').on('click', function() {//タイトル要素をクリックしたら
     $(this).addClass('close');//クラス名closeを付与
   }
 });
+
+

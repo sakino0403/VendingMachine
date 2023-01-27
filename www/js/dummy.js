@@ -15,3 +15,11 @@ $('#edit2').click(function() {
 $('#close2, #cover2').click(function() {
   $('#cover2, #modal2').fadeTo(200, 0).hide();
 });
+
+function open() {
+     $('#cover2, #modal2').fadeTo(200, 1);
+
+     $('#close2, #cover2').click(function() {
+  $('#cover2, #modal2').fadeTo(200, 0).hide();
+});
+}

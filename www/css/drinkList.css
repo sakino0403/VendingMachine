@@ -1,6 +1,41 @@
-main{
-    overflow-y: scroll;
-    height: 80%;
+.cover {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background: rgba(0,0,0,0.25);
+  z-index: 1;
+  display: none;
+}
+
+#cover2 {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background: rgba(0,0,0,0.25);
+  z-index: 1;
+  display: none;
+}
+.modal {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+   top: 20%;
+  height: 65%;
+  background: rgba(255,255,255, 1);
+  z-index: 2;
+  display: none;
+  text-align: center;
+}
+
+#modal2 {
+  position: absolute;
+  width: 33%;
+  left: 33%;
+   top: 20%;
+  height: auto;
+  background: rgba(255,255,255, 1);
+  z-index: 2;
+  display: none;
 }
 
 .flex-container {
@@ -14,3 +49,5 @@ main{
   text-align: center;
   width: 50%;
 }
+
+

@@ -1,0 +1,91 @@
+main{
+    font-size: 18px;
+}
+
+input.size {
+    content: '';
+	width: 20px;		/* ボタンの横幅 */
+	height: 20px;		/* ボタンの縦幅 */
+	top: 0;
+	left: 0;
+	background-color: #63CDE8;
+	border-radius: 50%;
+}
+
+/* inputの下線 */
+.form3-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 27px;
+  margin: 4px 0;
+  font-size: 16px;
+  color: #333;
+  border: 0;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #ccc;
+  border-left: none;
+  outline: 0;
+  transition: 0.3s;
+  -webkit-appearance: none;
+}
+
+.form3-input:focus {
+  border: 1px solid #67c5ff;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+#centerImg{
+    padding:40px 130px;
+    text-align: center;
+}
+
+#newDeal_info{
+  padding:0px 0px;
+  width: 100%;
+  text-align: center;
+}
+
+label#chooseImg {
+  color:#efefef;/*マウスオーバー時の色*/
+  background-color:#63CDE8;
+  padding: 10px;
+  width: 200px;
+  border-radius: 24px;
+}
+
+/*画像アップロード*/
+#preview img {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border: solid 1px silver;
+}
+
+/*input要素の横幅を画面に合わせる*/
+.width { width: 90%; }
+
+/* input要素の縦横幅を画面に合わせる */
+.nd_size {
+  width: 90%;
+  height: 30px;
+}
+
+/*input要素を右寄せにする*/
+.right { text-align: right; }
+
+/*input要素の背景色をグレーにする*/
+.gray {
+  background-color:#fcfcfc;
+  padding: 0px 0px 10px;
+}
+
+/* 画像プレビュー */
+button.transparent {
+  color: black;
+  background: transparent;
+  border: none;
+  outline: none;
+}

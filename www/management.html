@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+    <script src="components/loader.js"></script>
+    <script src="components/management.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+    <!-- 波 -->
+    <link rel="stylesheet" type="text/css" href="css/wave.css">
+    <link rel="stylesheet" type="text/css" href="css/management.css">
+
+
+    <script>
+        // APIキーの設定とSDK初期化
+        var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
+
+        function insertImg() {
+            document.getElementById("insertImg").click();
+        }
+    </script>
+</head>
+
+<body>
+
+    <img id="wave1" src="img/sky.png" width=100%>
+    <div class="wave1">
+        <canvas id="waveCanvas1" style="z-index:1"></canvas>
+        <script src="js/wave.js"></script>
+    </div>
+
+    <main>
+        <br><br>
+
+        <!-- 商品画像選択 -->
+        <div class="flex" id="newDeal_info" name="item_image">
+            <!-- アルバムからアップロード -->
+            <form>
+                <label id="chooseImg">
+                    📷写真を選択する<input type="file" id="insertImg" accept="image/png, image/jpeg" style="display:none;" onchange="imgPreView(event)">
+                </label>
+            </form>
+        </div>
+
+        <!-- 👇ここにプレビュー画像を追加する -->
+        <div class="flex" id="preview" width="300" height="200">
+        </div>
+        <img id="centerImg" src="img/oi.png" width="30%">
+
+        <p>商品詳細</p>
+
+        <div class="gray">
+            <!-- 商品名 -->
+            <label for="item_name" class="leftmrg30px">商品名</label>
+            <div class="flex" id="newDeal_info" name="item_name">
+                <input type="text" id="item_name" class="nd_size" name="name" required maxlength="50" size="52">
+            </div>
+            <span id="errMessageName" class="errMessage"></span><br>
+
+            <!-- 商品情報 -->
+            <label for="item_info" class="leftmrg30px">商品の説明</label>
+            <div class="flex" id="newDeal_info" name="item_info">
+                <textarea id="item_info" name="item_info" class="width" maxlength="250" rows="8" required></textarea>
+            </div>
+            <span id="errMessageInfo" class="errMessage"></span><br>
+
+            <!-- 価格 -->
+            <label for="item_name" class="leftmrg30px">価格</label>
+            <input type="text" class="form3-input" placeholder="〇〇円" />
+
+            <!-- 容量 -->
+            <label for="item_name" class="leftmrg30px">容量</label>
+            <input type="text" class="form3-input" placeholder="〇〇ml" />
+
+            <!-- カロリー -->
+            <label for="item_name" class="leftmrg30px">カロリー</label>
+            <input type="text" class="form3-input" placeholder="〇〇kcal" />
+
+            <!-- カフェイン -->
+            <label for="item_name" class="leftmrg30px">カフェイン</label>
+            <input type="text" class="form3-input" placeholder="〇〇mg" />
+
+            <!-- 温冷 -->
+            <label for="item_name">温冷<br>
+            <input type="radio" name="name" value="hot" class="size">HOT
+            <input type="radio" name="name" value="cold" class="size">COLD
+            </label>
+
+            <!-- カテゴリー -->
+            <br>
+            <label for="category" class="leftmrg30px">カテゴリー</label>
+            <div class="flex" id="newDeal_info">
+                <select id="category" name="category" size=1 class="nd_size">
+                <option value="1">水</option>
+                <option value="2">お茶</option>
+                <option value="3">紅茶</option>
+                <option value="4">炭酸</option>
+                <option value="5">コーヒー</option>
+                <option value="6">エナジードリンク</option>
+                <option value="7">スポーツドリンク</option>
+                <option value="8">フルーツ</option>
+                <option value="100">その他</option>
+            </select>
+            </div><br>
+
+        </div>
+
+        <br>
+
+        <div class="button-flex" id="newDeal_info">
+            <label id="chooseImg">
+                    追加する
+                </label>
+        </div>
+
+        </button>
+        </div><br><br><br>
+
+
+    </main>
+
+    <footer>
+        <img id="wave2" src="img/sky.png" width=100%>
+        <div class="wave2">
+            <canvas id="waveCanvas2"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </footer>
+</body>
+
+</html>

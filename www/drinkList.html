@@ -3,35 +3,54 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
     <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+    <script src="components/loader.js"></script>
+    <script src="lib/onsenui/js/onsenui.min.js"></script>
+
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/drinkList.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/wave.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
-    <script src="components/loader.js"></script>
-    <script>
-        ons.ready(function() {
-            console.log("Onsen UI is ready!");
-        });
 
-        if (ons.platform.isIPhoneX()) {
-            document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-            document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    <!-- 波 -->
+    <link rel="stylesheet" type="text/css" href="css/wave.css">
+
+    <script>
+        // APIキーの設定とSDK初期化
+        var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
+
+        var reader = new FileReader();
+
+        var imgs = []; // 商品の画像入れるとこ
+
+        // 取得した情報で画面を上書き
+        function drink() {
+            var Drink = ncmb.DataStore('drink');
+            Drink.fetchAll()
+                .then(function(results) {
+                    for (var i = 0; i <= results.length - 1; i++) {
+                        var object = results[i];
+                        var image_id = "imgs" + (i + 1);
+                        //ボイスをリストに格納
+                        var drinklist_element = document.getElementById('drinklist');
+                        drinklist_element.insertAdjacentHTML("beforeend", '<div class="flex-item"><img id="edit2" src="https://mbaas.api.nifcloud.com/2013-09-01/applications/rRVxm2FhZzIeAcJm/publicFiles/' + object.img + ' " width="200" height="250"/>' + object.drinkName + '<br>' + object.ml + 'ml ' + object.price + '円' + '<br><br></div>');
+                    }
+                }).catch(function(err) {
+                    console.error("error");
+                });
         }
     </script>
-    <script src="modal.js"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <script src="js/dummy.js"></script>
+    <script src="js/lists.js"></script>
 </head>
 
 <body>
@@ -44,57 +63,21 @@
     </header>
 
     <main>
-        <button onclick="location.href='./dummy.html'">モーダル実験室</button><br><br>
-        <button type="button" onclick="history.back()">戻る</button>
-        <label class="ECM_CheckboxInput">
-            <input class="ECM_CheckboxInput-Input" type="checkbox">絞り込み
-        </label>
+        <button type="button" class="b-button" onclick="history.back()">戻る</button><p>ドリンク一覧</p>
+        <input class="sort" type="checkbox">絞り込み
 
+        <!-- 絞り込み -->
         <select>
             <option value="">選択肢を選ぶ</option>
-            <option>お～いおい</option>
-            <option>オイオイ！</option>
-            <option>お～やおや</option>
-            <option>ちょ、おいおいwww</option>
-            <option>ちょwwwおまwwww</option>
-            <option>お～いお茶</option>
-        </select><br>
+            <option></option>
+            <option></option>
+        </select><br><br>
 
-        <div class="flex-container">
-            <div class="flex-item"><img src="img/irohasu.png">モンスターエナジー<br>パイプラインパンチ<br>\100</div>
-            <div class="flex-item"><img src="img/irohasu.png">南アルプスの天然水<br>\100</div>
-            <div class="flex-item"><img src="img/ayataka.png">お～いお茶 緑茶<br>\100</div>
-
-            <div class="overlay" id="js-overlay"></div>
-            <div class="modal" id="js-modal">
-                <div class="modal-close__wrap">
-                    <button class="modal-close" id="js-close">
-                    <span></span>
-                    <span></span>
-                    </button>
-                </div>
-                <p>なんのため</p>
-            </div>
-
-            <div class="flex-item"><img style="height:200px; background-image:url('img/cold.png');" src="img/A.png" class="modal-open" id="js-open" width="100%"/>これだけモーダル出るで<br>\100</div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="js/modal.js"></script>
-        </div>
-
-        <div class="overlay" id="js-overlay"></div>
-            <div class="modal" id="js-modal">
-                <div class="modal-close__wrap">
-                    <button class="modal-close" id="js-close">
-                    <span></span>
-                    <span></span>
-                    </button>
-                </div>
-                <p>なんのため</p>
-            </div>
-
-            <div class="flex-item"><img style="height:200px; background-image:url('img/cold.png');" src="img/A.png" class="modal-open" id="js-open" width="100%"/>これはモーダル出ん<br>\100</div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="js/modal.js"></script>
+        <!-- ドリンク一覧 -->
+        <div class="flex-container" id="drinklist" onclick="location.href='./drinkDetail.html'">
+            <script>
+                drink();
+            </script>
         </div>
     </main>
 
@@ -105,6 +88,8 @@
             <script src="js/wave.js"></script>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 

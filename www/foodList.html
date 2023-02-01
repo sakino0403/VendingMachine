@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dummy.css">
+    <link rel="stylesheet" href="css/drinkList.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,16 +32,16 @@
         var imgs = []; // 商品の画像入れるとこ
 
         // 取得した情報で画面を上書き
-        function drink() {
-            var Drink = ncmb.DataStore('drink');
-            Drink.fetchAll()
+        function food() {
+            var Food = ncmb.DataStore('food');
+            Food.fetchAll()
                 .then(function(results) {
                     for (var i = 0; i <= results.length - 1; i++) {
                         var object = results[i];
                         var image_id = "imgs" + (i + 1);
                         //ボイスをリストに格納
-                        var drinklist_element = document.getElementById('drinklist');
-                        drinklist_element.insertAdjacentHTML("beforeend", '<div class="flex-item"><img onclick="open.js" id="edit2" src="https://mbaas.api.nifcloud.com/2013-09-01/applications/rRVxm2FhZzIeAcJm/publicFiles/' + object.img + ' " width="200" height="250"/>' + object.drinkName + '<br>' + object.ml + 'ml ' + object.price + '円' + '<br><br></div>');
+                        var foodlist_element = document.getElementById('foodlist');
+                        foodlist_element.insertAdjacentHTML("beforeend", '<div class="flex-item"><img id="edit2" src="https://mbaas.api.nifcloud.com/2013-09-01/applications/rRVxm2FhZzIeAcJm/publicFiles/' + object.img + ' " width="200" height="250"/>' + object.foodName + '<br>' + '<br><br></div>');
                     }
                 }).catch(function(err) {
                     console.error("error");
@@ -63,7 +63,7 @@
     </header>
 
     <main>
-        <button type="button" class="b-button" onclick="history.back()">戻る</button><br><br>
+        <button type="button" class="b-button" onclick="history.back()">戻る</button><p>フード一覧</p><br><br>
         <input class="sort" type="checkbox">絞り込み
 
         <!-- 絞り込み -->
@@ -74,22 +74,10 @@
         </select><br><br>
 
         <!-- ドリンク一覧 -->
-        <div class="flex-container" id="drinklist">
-            <div class="flex-item"><img src="img/ayataka.png" class="edit" />お～いお茶 緑茶<br>100円<br><br></div>
-
-            <div class="flex-item"><img src="img/ayataka.png" id="edit2" />お～いお茶 緑茶<br>110円<br><br></div>
-
-            <div class="flex-item"><img id="prodact_lists" onload="drink()" onclick="location.href='./drinkDetail.html'" src="" class="edit" width="200" height="200" />お～いお茶 緑茶<br>120円<br><br></div>
+        <div class="flex-container" id="foodlist" onclick="location.href='./drinkDetail.html'">
             <script>
-                drink("D00000001");
+                food();
             </script>
-
-            <div class="flex-item"><img src="" class="edit" width="200" height="200" />お～いお茶 緑茶<br>130円<br><br></div>
-            <script>
-                downloadImage();
-            </script>
-            <script src="js/dummy.js"></script>
-
         </div>
     </main>
 

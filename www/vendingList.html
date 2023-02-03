@@ -121,17 +121,17 @@
 
 
 <body>
-        <header>
-            <img id="wave1" src="img/sky.png" width=100%>
-            <div class="wave1">
-                <canvas id="waveCanvas1" style="z-index:1"></canvas>
-                <script src="js/wave.js"></script>
-            </div>
-        </header>
-        <!------ filter ------>
-        <main>
-            <!------ 絞り込み部分 ------>
-            <!-- <select class="js-filter" name="area">
+    <header>
+        <img id="wave1" src="img/sky.png" width=100%>
+        <div class="wave1">
+            <canvas id="waveCanvas1" style="z-index:1"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </header>
+    <!------ filter ------>
+    <main>
+        <!------ 絞り込み部分 ------>
+        <!-- <select class="js-filter" name="area">
             <option value="all">全て</option>
             <option value="本館">本館</option>
             <option value="2号館">2号館</option>
@@ -149,280 +149,281 @@
             <option value="8F">8F</option>
         </select> -->
 
-            <!------ 絞り込み対象 ------>
-            <ul class="accordion-area">
-                <div class="info">
-                    <h2>決済可能：●　決済不可能：〇</h2>
-                </div>
+        <button type="button" class="b-button" onclick="history.back()">戻る</button>
+        <!------ 絞り込み対象 ------>
+        <ul class="accordion-area">
+            <div class="info">
+                <h2>決済可能：●　決済不可能：〇</h2>
+            </div>
 
-                <h2>本館1F</h2>
-                <li>
-                    <section>
-                        <h4 class="title">101<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea101"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea101"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("101");
-                            </script>
-                            <p>
-                                <div id="cashArea101"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h4 class="title">102<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea102"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea102"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("102");
-                            </script>
-                            <p>
-                                <div id="cashArea102"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-            </ul>
-            <ul class="accordion-area">
-                <h2>本館2F</h2>
-                <li>
-                    <section>
-                        <h4 class="nasi">現在自動販売機を設置していません</h4>
-                    </section>
-                </li>
-            </ul>
-            <ul class="accordion-area">
-                <h2>本館3F</h2>
-                <li>
-                    <section>
-                        <h4 class="nasi">現在自動販売機を設置していません</h4>
-                    </section>
-                </li>
-            </ul>
-            <ul class="accordion-area">
-                <h2>本館4F</h2>
-                <li>
-                    <section>
-                        <h4 class="title">401<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea1401"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea401"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("401");
-                            </script>
-                            <p>
-                                <div id="cashArea401"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h4 class="title">402<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea402"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea402"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("402");
-                            </script>
-                            <p>
-                                <div id="cashArea402"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h4 class="title">403<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea403"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea403"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("403");
-                            </script>
-                            <p>
-                                <div id="cashArea403"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-            </ul>
-            <ul class="accordion-area">
-                <h2>本館5F</h2>
-                <li>
-                    <section>
-                        <h4 class="nasi">現在自動販売機を設置していません</h4>
-                    </section>
-                </li>
-            </ul>
-            <ul class="accordion-area">
-                <h2>本館6F</h2>
-                <li>
-                    <section>
-                        <h4 class="title">601<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea601"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea601"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("601");
-                            </script>
-                            <p>
-                                <div id="cashArea601"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h4 class="title">602<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea602"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea602"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("602");
-                            </script>
-                            <p>
-                                <div id="cashArea602"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-            </ul>
-            <ul class="accordion-area">
-                <h2>本館8F</h2>
-                <li>
-                    <section>
-                        <h4 class="title">801<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea801"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea801"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("801");
-                            </script>
-                            <p>
-                                <div id="cashArea801"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-            </ul>
-            <ul class="accordion-area">
-                <h2>2号館</h2>
-                <li>
-                    <section>
-                        <h4 class="nasi">現在自動販売機を設置していません</h4>
-                    </section>
-                </li>
-            </ul>
-            <ul class="accordion-area">
-                <h2>3号館1F</h2>
-                <li>
-                    <section>
-                        <h4 class="title">311<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea311"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea311"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("311");
-                            </script>
-                            <p>
-                                <div id="cashArea311"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h4 class="title">312<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea312"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea312"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("312");
-                            </script>
-                            <p>
-                                <div id="cashArea312"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-            </ul>
-            <ul class="accordion-area">
-                <h2>3号館2F</h2>
-                <li>
-                    <section>
-                        <h4 class="title">321<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea321"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea321"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("321");
-                            </script>
-                            <p>
-                                <div id="cashArea321"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-                <li>
-                    <section>
-                        <h4 class="title">322<br> ドリンク：
-                            <div class="ico" id="drinkFlgArea322"></div>
-                            <br>フード：
-                            <div class="ico" id="foodFlgArea322"></div>
-                        </h4>
-                        <div class="box">
-                            <script>
-                                waa("322");
-                            </script>
-                            <p>
-                                <div id="cashArea322"></div>
-                            </p>
-                        </div>
-                    </section>
-                </li>
-            </ul>
-            <!-- <script>
+            <h2>本館1F</h2>
+            <li>
+                <section>
+                    <h4 class="title">101<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea101"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea101"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("101");
+                        </script>
+                        <p>
+                            <div id="cashArea101"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h4 class="title">102<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea102"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea102"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("102");
+                        </script>
+                        <p>
+                            <div id="cashArea102"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館2F</h2>
+            <li>
+                <section>
+                    <h4 class="nasi">現在自動販売機を設置していません</h4>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館3F</h2>
+            <li>
+                <section>
+                    <h4 class="nasi">現在自動販売機を設置していません</h4>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館4F</h2>
+            <li>
+                <section>
+                    <h4 class="title">401<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea1401"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea401"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("401");
+                        </script>
+                        <p>
+                            <div id="cashArea401"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h4 class="title">402<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea402"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea402"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("402");
+                        </script>
+                        <p>
+                            <div id="cashArea402"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h4 class="title">403<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea403"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea403"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("403");
+                        </script>
+                        <p>
+                            <div id="cashArea403"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館5F</h2>
+            <li>
+                <section>
+                    <h4 class="nasi">現在自動販売機を設置していません</h4>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館6F</h2>
+            <li>
+                <section>
+                    <h4 class="title">601<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea601"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea601"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("601");
+                        </script>
+                        <p>
+                            <div id="cashArea601"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h4 class="title">602<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea602"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea602"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("602");
+                        </script>
+                        <p>
+                            <div id="cashArea602"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>本館8F</h2>
+            <li>
+                <section>
+                    <h4 class="title">801<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea801"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea801"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("801");
+                        </script>
+                        <p>
+                            <div id="cashArea801"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>2号館</h2>
+            <li>
+                <section>
+                    <h4 class="nasi">現在自動販売機を設置していません</h4>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>3号館1F</h2>
+            <li>
+                <section>
+                    <h4 class="title">311<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea311"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea311"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("311");
+                        </script>
+                        <p>
+                            <div id="cashArea311"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h4 class="title">312<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea312"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea312"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("312");
+                        </script>
+                        <p>
+                            <div id="cashArea312"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <ul class="accordion-area">
+            <h2>3号館2F</h2>
+            <li>
+                <section>
+                    <h4 class="title">321<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea321"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea321"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("321");
+                        </script>
+                        <p>
+                            <div id="cashArea321"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h4 class="title">322<br> ドリンク：
+                        <div class="ico" id="drinkFlgArea322"></div>
+                        <br>フード：
+                        <div class="ico" id="foodFlgArea322"></div>
+                    </h4>
+                    <div class="box">
+                        <script>
+                            waa("322");
+                        </script>
+                        <p>
+                            <div id="cashArea322"></div>
+                        </p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <!-- <script>
             multi_filter('d-none', '.js-filter-item', '.js-filter', '.js-filter-msg');
         </script> -->
-            <br>
-        </main>
-        <footer>
-            <img id="wave2" src="img/sky.png" width=100%>
-            <div class="wave2">
-                <canvas id="waveCanvas2"></canvas>
-                <script src="js/wave.js"></script>
-            </div>
-        </footer>
+        <br>
+    </main>
+    <footer>
+        <img id="wave2" src="img/sky.png" width=100%>
+        <div class="wave2">
+            <canvas id="waveCanvas2"></canvas>
+            <script src="js/wave.js"></script>
+        </div>
+    </footer>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="js/vendingDown.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/vendingDown.js"></script>
 </body>
 
 </html>

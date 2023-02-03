@@ -143,3 +143,15 @@ h2{
 #waveCanvas2{
     position: center;
 }
+.b-button {
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #7ac0f8;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 3em;
+}

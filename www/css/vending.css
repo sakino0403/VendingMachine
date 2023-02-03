@@ -4,10 +4,29 @@
 }
 main{
     overflow-y: scroll;
-    height: 80%;
+    height: 85%;
     max-height: 632px;
     padding-right: 40px;
-    }
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: auto;
+}
+
+header{
+    top: 0;
+}
+
+footer{
+  bottom: 0; /*下に固定*/
+  width: 100％;
+  left: 0;
+}
 
 /*アコーディオン全体*/
 .accordion-area{
@@ -18,12 +37,24 @@ main{
 }
 
 .accordion-area li{
-    margin: 10px auto;
+    margin: 10px -9px;
+    background-color: #fff;
 }
 
 .accordion-area section {
-  border: 1px solid #ccc;
+  border: 10px solid #63CDE8;
+  border-radius: 10px
 }
+
+.accordion-area section h4 {
+    margin:2px;
+    padding: auto 5px 5px 5px;
+}
+.nasi{
+    margin:10px;
+    text-align: center;
+}
+
 section{
     width: 270px;
 }
@@ -47,7 +78,7 @@ section{
     content:'';
     width: 15px;
     height: 2px;
-    background-color: #333;
+    background-color: #183793;
     
 }
 .title::before{
@@ -96,3 +127,19 @@ h2{
     margin-top: 15px;
 }
 
+.accordion-area .info{
+    background-color: #63CDE8;
+    padding: 0.2em;
+    margin: 10px -20px;
+    position: relative;
+    margin-right: -10%;
+    border: 10px solid #bce8f3;
+    border-radius: 20px;
+}
+
+.info h2{
+    color: white;
+}
+#waveCanvas2{
+    position: center;
+}

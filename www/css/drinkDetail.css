@@ -2,3 +2,18 @@
     text-align: center;
 }
 
+input[type="checkbox"] {
+  display: none;
+}
+label {
+  cursor: pointer;
+}
+label svg {
+  width: 80px;
+}
+input[type="checkbox"] + label svg {
+  fill: #FAE2E2;
+}
+input[type="checkbox"]:checked + label svg {
+  fill: #ff1919;
+}

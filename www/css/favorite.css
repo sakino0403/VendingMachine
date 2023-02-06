@@ -66,10 +66,10 @@ label svg {
   width: 80px;
 }
 input[type="checkbox"] + label svg {
-  fill: #FAE2E2;
+  fill: #ff1919;
 }
 input[type="checkbox"]:checked + label svg {
-  fill: #ff1919;
+  fill: #FAE2E2;
 }
 
 input[type="checkbox"]:checked + label::after {

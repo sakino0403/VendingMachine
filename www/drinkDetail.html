@@ -38,7 +38,7 @@
             var item = Drink.equalTo("drinkId", num)
             Drink.fetchAll()
                 .then(item => {
-                    var object = item[0]; //数字を変数にしたいナ！
+                    var object = item[31]; //数字を変数にしたいナ！
                     //ボイスをリストに格納
                     var drinklist_element = document.getElementById('drinklist');
                     drinklist_element.insertAdjacentHTML("beforebegin", '<div class="item"><img src="https://mbaas.api.nifcloud.com/2013-09-01/applications/rRVxm2FhZzIeAcJm/publicFiles/' + object.img + ' " width="200" height="250"/></div><br><hr>商品名　' + object.drinkName + '<hr>商品説明　' + object.detail + '<hr>価格　' + object.price + '円<hr>容量　' + object.ml + 'ml<hr>カロリー　' + object.kcal + 'kcal<hr>カフェイン　' + object.caffeine + 'mg<hr>温冷　つめた～い' + '<hr>カテゴリ　エナジードリンク' + '<hr>位置情報　本館1F' + '<hr>');

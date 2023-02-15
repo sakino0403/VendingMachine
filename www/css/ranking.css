@@ -1,3 +1,4 @@
+/* 1位 */
 .anim-box.zoomin.is-animated1 {
   animation: zoomIn 2.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
   position: relative;
@@ -6,6 +7,7 @@
   margin-left: 40px;
 }
 
+/* 2位 */
 .anim-box.zoomin.is-animated2 {
   animation: zoomIn 5.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
   position: relative;
@@ -15,6 +17,7 @@
   margin-left: 10px;
 }
 
+/* 3位 */
 .anim-box.zoomin.is-animated3 {
   animation: zoomIn 7.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
   position: relative;
@@ -24,6 +27,7 @@
   margin-left: 140px;
 }
 
+/* 浮き出る */
 @keyframes zoomIn {
   0% {
     transform: scale(0.8);
@@ -35,66 +39,77 @@
   }
 }
 
+/* 1位 画像位置 */
 .absolute011{
   position: absolute;
   top: 40px;
   left: 60px;
 }
 
+/* 2位 画像位置 */
 .absolute012{
   position: absolute;
   top: 20px;
   left: 85px;
 }
 
+/* 3位 画像位置 */
 .absolute013{
   position: absolute;
   top: 25px;
   left: 0px;
 }
 
+/* 3位 画像位置 */
 .absolute01{
   position: absolute;
   top: 0px;
   left: 20px;
 }
 
+/* 2位のロゴ */
 .absolute001{
   position: absolute;
   top: 0px;
   left: 140px;
 }
 
+/* 1位のロゴ */
 .absolute002{
   position: absolute;
   top: 10px;
   left: 33px;
 }
 
+/* 背景 */
 .absolute02{
   position: absolute;
   top: -30px;
   left: -35px;
 }
 
+/* 背景 */
 .absolute03{
   position: absolute;
   top: 60px;
   left: 30px;
 }
 
+/* 商品名 */
 .drinkName1{
   position: absolute;
   top: 297px;
   left: 50px;
 }
 
+/* 商品名 */
 .drinkName2{
   position: absolute;
   top: 250px;
   left: 50px;
 }
 
+/* 商品名 */
 .drinkName3{
   position: absolute;
   top: 230px;

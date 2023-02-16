@@ -27,29 +27,6 @@
     <script>
         // APIキーの設定とSDK初期化
         var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
-
-        // 保存先クラスの作成
-        var TestClass = ncmb.DataStore("TestClass");
-        // 保存先クラスのインスタンスを生成
-        var testClass = new TestClass();
-        // 値を設定と保存
-        testClass.set("message", "Hello, NCMB!")
-            .save()
-            .then(function(object) {
-                // 保存に成功した場合の処理
-            })
-            .catch(function(err) {
-                // 保存に失敗した場合の処理
-            });
-
-        ons.ready(function() {
-            console.log("Onsen UI is ready!");
-        });
-
-        if (ons.platform.isIPhoneX()) {
-            document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-            document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
-        }
     </script>
 </head>
 

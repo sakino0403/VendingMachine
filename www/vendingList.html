@@ -13,42 +13,6 @@
         // APIキーの設定とSDK初期化
         var ncmb = new NCMB("a59165a217e09aae15a26c95a9e51f8510ea7fbb8da9ad8c15686fa1c5b449e7", "32551b9f4f6afa631f1fc4b63df334ab33683be35b820813931f0e6c156aa4c3");
 
-        // function multi_filter(h, t, s, r = "") {
-        //     console.log("チョキ");
-        //     let hidden = h;
-        //     let targets = document.querySelectorAll(t);
-        //     let selects = document.querySelectorAll(s);
-        //     let result = document.querySelector(r);
-        //     let result_msg = "";
-
-        //     if (selects) {
-        //         //****** for all select ******
-        //         for (let i of selects) {
-        //             i.addEventListener("change", () => {
-        //                 let hidden_num = 0;
-        //                 //*** for each target ***
-        //                 for (let ii of targets) {
-        //                     //*** delete hidden class ***
-        //                     ii.classList.remove(hidden);
-        //                     //*** check target every select ***
-        //                     for (let iii of selects) {
-        //                         //*** get select name value / option value / target data attribute ***
-        //                         let value = iii.value;
-        //                         let name = iii.getAttribute("name");
-        //                         let item_data = ii.getAttribute("data-" + name);
-        //                         //*** set hidden class ***
-        //                         // exist value & except all & item_data not match & no hidden class
-        //                         if (value && value !== "all" && value !== item_data && !ii.classList.contains(hidden)) {
-        //                             ii.classList.add(hidden);
-        //                             hidden_num++;
-        //                         }
-        //                     }
-        //                 }
-        //             });
-        //         }
-        //     }
-        // }
-
         function waa(num) {
             console.log("右膝前十字靱帯断裂");
             var TestClass = ncmb.DataStore('vending');
@@ -57,40 +21,8 @@
                 .then(item => { //itemはlist型
                     var object = item[0];
                     var payId = object.payId;
-                    console.log(payId);
-                    console.log(object);
                     console.log("届いたぞ！ノロマ！");
-                    // var TestClass = ncmb.DataStore('pay');
-                    // var item = TestClass.equalTo("payId", payId)
-                    //     .fetchAll()
-                    //     .then(item => { //itemはlist型
-                    //         console.log(item.cash);
-                    //         for (var i = 0; i <= item.length - 1; i++) {
-                    //             var a = item[0];
-                    //             console.log("世界一になるのは俺だ！");
-                    //             if(a.cash){
-                    //                 document.getElementById('cash_area').innerHTML = "有";
-                    //             }else{
-                    //                 document.getElementById('cash_area').innerHTML = "無";
-                    //             }
-                    //             if(a.CokeONPay){
-                    //                 document.getElementById('CokeONPay_area').innerHTML = "有";
-                    //             }else{
-                    //                 document.getElementById('CokeONPay_area').innerHTML = "無";
-                    //             }
-                    //             if(a.dPay){
-                    //                 document.getElementById('dPay_area').innerHTML = "有";
-                    //             }else{
-                    //                 document.getElementById('dPay_area').innerHTML = "無";
-                    //             }
-                    //         }
-                    //         // console.log(object.CokeONPay);
-                    //         // console.log(object.dPay);
-                    //         document.getElementById('edit_area').innerHTML = a.cash;
-                    //     })
-                    //     .catch(e => {
-                    //         console.log('俺はサッカーをあきらめる理由を探しにブルーロックに来た');
-                    //     });
+            
                     var food = "";
                     var drink = "";
                     const image = document.createElement('img');
@@ -130,25 +62,6 @@
     </header>
     <!------ filter ------>
     <main>
-        <!------ 絞り込み部分 ------>
-        <!-- <select class="js-filter" name="area">
-            <option value="all">全て</option>
-            <option value="本館">本館</option>
-            <option value="2号館">2号館</option>
-            <option value="3号館">3号館</option>
-        </select>
-        <select class="js-filter" name="floor">
-            <option value="all">全て</option>
-            <option value="1F">1F</option>
-            <option value="2F">2F</option>
-            <option value="3F">3F</option>
-            <option value="4F">4F</option>
-            <option value="5F">5F</option>
-            <option value="6F">6F</option>
-            <option value="7F">7F</option>
-            <option value="8F">8F</option>
-        </select> -->
-
         <button type="button" class="b-button" onclick="history.back()">戻る</button>
         <!------ 絞り込み対象 ------>
         <ul class="accordion-area">
@@ -409,9 +322,6 @@
                 </section>
             </li>
         </ul>
-        <!-- <script>
-            multi_filter('d-none', '.js-filter-item', '.js-filter', '.js-filter-msg');
-        </script> -->
         <br>
     </main>
     <footer>
